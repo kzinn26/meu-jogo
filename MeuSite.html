@@ -1,0 +1,579 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Parobá Gesso Art - Excelência em gesso artístico, molduras, sancas e painéis 3D. Transforme seus ambientes com elegância e requinte.">
+    <meta name="author" content="Parobá Gesso Art">
+    <title>Parobá Gesso Art | Arte em Gesso</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffcf8;
+            color: #2c241a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo, .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffffdd;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid #f0e5d8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #b68b40;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: #5a3e2b;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #3b2c1e;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #b68b40;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f9f1e8 0%, #fff4ec 100%);
+            padding: 70px 0 80px;
+            border-bottom: 1px solid #eedbcb;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 3.7rem;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #442f1f;
+            margin-bottom: 20px;
+        }
+
+        .hero-highlight {
+            color: #b68b40;
+            border-bottom: 2px solid #e2c7aa;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: #4f3e2c;
+            margin: 20px 0 28px;
+            max-width: 550px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #b68b40;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #b68b40;
+            color: #b68b40;
+            margin-left: 12px;
+        }
+
+        .btn-outline:hover {
+            background: #b68b40;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #9c7237;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            background: #e9dfd2;
+            border-radius: 32px;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://placehold.co/600x450/f4ede5/b68b40?text=Gesso+Art+%7C+Parobá');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            border: 1px solid #f0e2d4;
+        }
+
+        /* Seções padrão */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 48px;
+            color: #352415;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #dbbc91;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        .services-grid, .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #f1e7de;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #b68b40;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .service-card p {
+            color: #6b5a48;
+        }
+
+        .gallery-item {
+            background: #f7f1ea;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.2s;
+            border: 1px solid #eedbcb;
+        }
+
+        .gallery-img {
+            height: 220px;
+            background-color: #e7dbcf;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8f7a64;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .gallery-item p {
+            padding: 16px 20px;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+        }
+
+        /* Sobre */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #4c3b2a;
+        }
+
+        .about-stats {
+            flex: 0.8;
+            background: #fcf6ef;
+            padding: 30px;
+            border-radius: 28px;
+            border-left: 5px solid #b68b40;
+        }
+
+        /* Contato + Espaço Instagram */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: #fdf9f4;
+            border-radius: 48px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.02);
+        }
+
+        .contact-form {
+            flex: 1.2;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            border: 1px solid #e2d4c8;
+            border-radius: 32px;
+            font-family: 'Inter', sans-serif;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .contact-form textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #b68b40;
+            box-shadow: 0 0 0 3px rgba(182,139,64,0.1);
+        }
+
+        .instagram-space {
+            flex: 0.9;
+            background: linear-gradient(145deg, #ffffff, #faf3ea);
+            border-radius: 32px;
+            padding: 28px 24px;
+            text-align: center;
+            border: 1px dashed #dbbc91;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+        }
+
+        .instagram-space i {
+            font-size: 3.4rem;
+            background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .instagram-space h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .instagram-link {
+            display: inline-block;
+            background: #f2e7dd;
+            padding: 12px 24px;
+            border-radius: 60px;
+            margin: 20px 0 12px;
+            font-weight: 600;
+            color: #2f241b;
+            text-decoration: none;
+            transition: 0.2s;
+            border: 1px solid #d4bc9e;
+        }
+
+        .instagram-link i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            background: none;
+            color: #c13584;
+            background-clip: unset;
+            -webkit-background-clip: unset;
+        }
+
+        .instagram-link:hover {
+            background: #b68b40;
+            color: white;
+            border-color: #b68b40;
+        }
+
+        .instagram-handle {
+            font-family: monospace;
+            background: #f0e5da;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            color: #5f4a33;
+        }
+
+        .footer {
+            background: #221c15;
+            color: #cfc3b6;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #3f3225;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .contact-row {
+                padding: 32px 24px;
+            }
+            .container {
+                padding: 0 24px;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 12px;
+            }
+            .hero-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        .highlight-code {
+            font-size: 0.75rem;
+            background: #efebe6;
+            padding: 4px 8px;
+            border-radius: 20px;
+            color: #7a623f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">PAROBÁ <span>GESSO ART</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">Beleza que <span class="hero-highlight">molda</span> ambientes<br>Arte em gesso com alma</h1>
+                <p class="hero-text">Há mais de 12 anos transformando paredes e tetos em obras de arte. Sancas, molduras, painéis 3D e texturas exclusivas para seu lar ou negócio.</p>
+                <div>
+                    <a href="#contato" class="btn">Solicitar orçamento</a>
+                    <a href="#galeria" class="btn btn-outline">Ver trabalhos</a>
+                </div>
+            </div>
+            <div class="hero-image" aria-label="Mostra de arte em gesso Parobá"></div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">O que oferecemos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-border-all"></i>
+                    <h3>Sancas & Moluras</h3>
+                    <p>Acabamentos clássicos e contemporâneos, valorizando pé direito e iluminação.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-circle-notch"></i>
+                    <h3>Rosáceas & Medalhões</h3>
+                    <p>Detalhes centrais para lustres e candeeiros, elegância atemporal.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Painéis 3D</h3>
+                    <p>Texturas modernas e relevos que criam profundidade e estilo único.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Pintura Artística</h3>
+                    <p>Acabamento com pigmentos, folhas metálicas e efeitos personalizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Placeholder (substituível por fotos reais) -->
+    <section id="galeria" style="background: #fefaf5;">
+        <div class="container">
+            <h2 class="section-title">Trabalhos recentes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://placehold.co/500x350/e7dbcf/b68b40?text=Sanca+Clássica'); background-size: cover; background-position: center;"></div>
+                    <p>Sanca iluminada | Sala de estar</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://placehold.co/500x350/e7dbcf/b68b40?text=Painel+3D+Orgânico'); background-size: cover; background-position: center;"></div>
+                    <p>Painel 3D ondulado | Escritório</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://placehold.co/500x350/e7dbcf/b68b40?text=Rosácea+Barroca'); background-size: cover; background-position: center;"></div>
+                    <p>Rosácea ornamentada | Hall de entrada</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://placehold.co/500x350/e7dbcf/b68b40?text=Molduras+Arte'); background-size: cover; background-position: center;"></div>
+                    <p>Molduras para quadros e espelhos</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <p class="highlight-code">* Imagens meramente ilustrativas — substitua pelas fotos reais da sua empresa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre + valores -->
+    <section>
+        <div class="container about-content">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Sobre a Parobá Gesso Art</h2>
+                <p>Nascida da paixão por detalhes e pela técnica centenária do gesso artístico, a Parobá une tradição e inovação. Cada projeto é pensado para realçar a personalidade do ambiente, com materiais nobres e mão de obra especializada.</p>
+                <p>Atendemos residências, flats comerciais, lojas e eventos, criando desde acabamentos discretos até composições exuberantes. Nosso compromisso é com a durabilidade, beleza e satisfação de cada cliente.</p>
+                <p><i class="fas fa-check-circle" style="color: #b68b40;"></i> 100% personalizado · <i class="fas fa-check-circle" style="color: #b68b40;"></i> Entrega no prazo · <i class="fas fa-check-circle" style="color: #b68b40;"></i> Acabamento premium</p>
+            </div>
+            <div class="about-stats">
+                <i class="fas fa-medal" style="font-size: 2.2rem; color: #b68b40;"></i>
+                <h3 style="font-size: 2rem; margin: 12px 0 4px;">+450</h3>
+                <p>Projetos realizados</p>
+                <hr style="margin: 20px 0; border-color: #e4d5c6;">
+                <i class="fas fa-calendar-alt" style="color: #b68b40;"></i>
+                <p><strong>12 anos</strong> de experiência em gesso artístico</p>
+                <i class="fas fa-map-marker-alt" style="margin-top: 18px; display: inline-block; color: #b68b40;"></i>
+                <p>Atendimento em todo o Brasil</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato + ESPAÇO INSTAGRAM (diretamente destacado e editável) -->
+    <section id="contato">
+        <div class="container">
+            <div class="contact-row">
+                <!-- Formulário de contato simples -->
+                <div class="contact-form">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Cormorant Garamond', serif;">Vamos conversar</h3>
+                    <p style="margin-bottom: 24px;">Solicite um orçamento sem compromisso.</p>
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="E-mail para contato" required>
+                        <input type="tel" placeholder="WhatsApp / Telefone">
+                        <textarea rows="4" placeholder="Descreva sua ideia ou ambiente..."></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Enviar mensagem</button>
+                    </form>
+                    <p style="font-size: 0.75rem; margin-top: 16px; color: #8f7a64;">Respondemos em até 24h.</p>
+                </div>
+
+                <!-- ESPAÇO DESTINADO AO INSTAGRAM DA EMPRESA -->
+                <!-- ======================================================== -->
+                <!-- INSTRUÇÃO: Altere o link do Instagram, o @handle e a URL 
+                     do perfil nos locais indicados abaixo (marcados com COMENTÁRIO) -->
+                <!-- ======================================================== -->
+                <div class="instagram-space">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Nosso Instagram</h3>
+                    <p style="margin-bottom: 12px;">Acompanhe projetos, bastidores e inspirações em gesso artístico.</p>
+                    
+                    <!-- ▼▼▼  ÁREA EDITÁVEL DO INSTAGRAM ▼▼▼ -->
+                    <!-- Substitua o link do href pelo endereço real do perfil da empresa -->
+                    <!-- Substitua o texto "@parobagessoart" pelo username real da empresa -->
+                    <a href="https://www.instagram.com/parobagessoart" target="_blank" class="instagram-link" id="instagramLink">
+                        <i class="fab fa-instagram"></i> Acesse nosso perfil
+                    </a>
+                    <div style="margin: 12px 0 8px;">
+                        <span class
